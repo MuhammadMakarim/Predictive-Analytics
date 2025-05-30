@@ -1,91 +1,71 @@
 # Laporan Proyek Pertama Machine Learning Terapan - Muhammad Makarim
 ---
 ## Domain Proyek
-Proyek *Machine Learning* ini mengangkat domain kesehatan. Proyek yang dibangun adalah  
-*Prediksi Kepribadian * yang dikembangkan berdasarkan data.
+Proyek Machine Learning ini mengangkat domain sosial dan psikologi, dengan fokus pada Prediksi Kepribadian. Dataset yang digunakan mencakup tanggapan individu mengenai perilaku sosial dan karakteristik kepribadian, yang membedakan antara introvert dan extrovert. Melalui analisis ini, kami bertujuan untuk memahami bagaimana kepribadian mempengaruhi keterlibatan sosial, ketakutan akan panggung, dan kecenderungan individu untuk berbagi pengalaman secara online.
 
 ## Latar Belakang
-Masalah kesehatan mental dan regulasi emosi menjadi isu yang semakin memerlukan perhatian serius di berbagai kelompok 
-usia. Berdasarkan Survei Kesehatan Indonesia 2023 yang dilakukan oleh Kementerian Kesehatan, prevalensi depresi nasional 
-mencapai 1,4%, yang menunjukkan bahwa gangguan kesehatan mental bukanlah hal yang jarang terjadi[1]. Selain itu, survei 
-dari *Indonesia National Adolescent Mental Health* 2022 mengungkap bahwa satu dari tiga individu mengalami masalah 
-kesehatan mental, sementara satu dari dua puluh mengalami gangguan mental dalam 12 bulan terakhir[2]. Temuan ini 
-mencerminkan bahwa permasalahan kesehatan mental bersifat lintas usia dan perlu penanganan menyeluruh yang melibatkan 
-berbagai pendekatan, termasuk edukasi, dukungan sosial, serta inovasi teknologi dalam bidang kesehatan mental.
+Masalah kepribadian dan pengaruhnya terhadap perilaku sosial semakin menarik perhatian di berbagai kalangan. Penelitian menunjukkan bahwa kepribadian dapat mempengaruhi interaksi sosial individu. Berdasarkan dataset yang dianalisis, perbedaan signifikan terlihat antara individu yang berkepribadian introvert dan extrovert dalam hal kehadiran di acara sosial dan pengalaman setelahnya. Individu introvert cenderung lebih memilih waktu sendirian dan merasa lebih lelah setelah berinteraksi dengan banyak orang, sementara individu extrovert lebih aktif dalam menghadiri acara sosial dan energik setelahnya. Selain itu, penelitian oleh McCrae dan Costa (2008) menunjukkan hubungan yang kuat antara sifat kepribadian dan keterlibatan dalam aktivitas sosial, yang mendasari pentingnya memahami karakteristik ini dalam konteks sosial yang beragam.
 
 <br/>
 
-Pemanfaatan teknologi digital, khususnya sistem pendukung berbasis kecerdasan buatan, berpotensi menjadi solusi inovatif 
-untuk meningkatkan kesadaran serta deteksi dini risiko masalah kesehatan mental. Dengan kemampuan analisis data yang 
-cepat dan akurat, teknologi ini dapat membantu mengidentifikasi pola perilaku dan gejala yang mengarah pada risiko 
-penyakit mental. Selain itu, penggunaan aplikasi dan platform digital juga memungkinkan akses layanan kesehatan mental 
-yang lebih luas dan mudah dijangkau oleh berbagai kelompok masyarakat, sehingga intervensi dapat dilakukan lebih cepat 
-dan tepat sasaran.
+Dalam era digital, pemanfaatan teknologi menjadi penting untuk memahami dan menganalisis perilaku sosial berdasarkan kepribadian. Dengan kemampuan analisis data yang cepat dan akurat, teknologi dapat membantu dalam mengidentifikasi pola perilaku dan rekomendasi untuk meningkatkan keterlibatan sosial. Mengingat hal tersebut, kami berusaha memberikan wawasan yang berguna untuk individu dan organisasi dalam mendesain program yang mendukung semua tipe kepribadian, serta mengoptimalkan interaksi sosial dalam konteks kesehatan mental. Penelitian oleh Cain (2013) menekankan bahwa inovasi teknologi dapat berfungsi sebagai solusi untuk meningkatkan kesadaran dan partisipasi dalam kesehatan mental.
 
 ## Business Understanding
 
 ## Problem Statements
 Berdasarkan latar belakang yang telah disampaikan, terdapat beberapa rumusan masalah yang akan diselesaikan pada proyek ini:
-1. Faktor apa saja yang memengaruhi tingkat risiko penyakit mental pada individu?
-2. Bagaimana cara membangun model *machine learning* untuk melakukan klasifikasi tingkat risiko penyakit mental?
-3. Bagaimana cara memilih model *machine learning* dengan akurasi, *precision*, *recall*, dan F1-score terbaik untuk 
-masalah prediksi risiko penyakit mental?
+1. Faktor apa saja yang mempengaruhi tingkat aktivitas sosial individu berdasarkan kepribadian?
+2. Bagaimana cara membangun model machine learning untuk melakukan klasifikasi tingkat aktivitas sosial berdasarkan kepribadian?
+3. Bagaimana cara memilih model machine learning dengan akurasi, precision, recall, dan F1-score terbaik untuk masalah prediksi kepribadian?
 
 ### Goals
 Proyek ini dibangun dengan tujuan:
-1. Mengetahui variabel dan fitur yang berpengaruh terhadap tingkat risiko kesehatan mental individu.
-2. Mengetahui cara membangun model *machine learning* untuk melakukan klasifikasi tingkat kesehatan mental individu 
-berdasarkan data.
-3. Menentukan model terbaik untuk memprediksi tingkat risiko kesehatan mental berdasarkan hasil perbandingan metrik 
-evaluasi seperti akurasi, *precision*, *recall*, dan F1-score.
+1. Mengidentifikasi variabel dan fitur yang mempengaruhi tingkat keterlibatan sosial individu berdasarkan kepribadian.
+2. Mengembangkan model machine learning untuk melakukan klasifikasi tingkat keterlibatan sosial individu berdasarkan data.
+3. Menentukan model terbaik untuk memprediksi tingkat keterlibatan sosial, berdasarkan hasil perbandingan metrik evaluasi seperti akurasi, precision, recall, dan F1-score.
 
 ### Solution Statements
 Untuk mencapai tujuan dalam studi kasus ini, dilakukan beberapa tahapan solusi sebagai berikut:
-1. Melakukan eksplorasi dan analisis data untuk memahami karakteristik data dan mengidentifikasi fitur-fitur yang paling 
-relevan terhadap tingkat risiko gangguan kesehatan mental. Analisis yang dilakukan mencakup pembersihan data, visualisasi, 
-dan uji korelasi antarf fitur dalam data.
-2. Membangun model *machine learning* klasifikasi untuk memprediksi tingkat risiko kesehatan mental individu. Beberapa 
-model berikut dipilih berdasarkan kemampuannya dalam menangani kasus klasifikasi:
-    - **K-Nearest Neighbors (KNN)**: Mengklasifikasikan data berdasarkan kemiripan dengan tetangga terdekat.
-    - **Random Forest**: Menggabungkan banyak *decision tree* untuk meningkatkan stabilitas dan akurasi klasifikasi.
-    - **Boosting**: Menggabungkan beberapa model sederhana secara berurutan untuk memperbaiki kesalahan prediksi dan 
-   meningkatkan performa.
-3. Melakukan evaluasi dan memilih model terbaik dengan membandingkan hasil akurasi, *precision*, *recall*, dan F1-score 
-untuk menentukan model yang paling optimal.
+1. Melakukan eksplorasi dan analisis data untuk memahami karakteristik data dan mengidentifikasi fitur-fitur yang paling relevan untuk menganalisis kepribadian individu. Analisis ini meliputi pembersihan data, visualisasi, dan pengujian korelasi antar fitur dalam dataset untuk mengungkap pola yang berkaitan dengan kepribadian introvert dan ekstrovert.
+2. Membangun model machine learning klasifikasi untuk memprediksi tipe kepribadian individu. Beberapa model akan digunakan berdasarkan performanya dalam menangani kasus klasifikasi:
+    - **K-Nearest Neighbors (KNN)**: Mengklasifikasikan kepribadian berdasarkan kedekatan dengan data lainnya.
+    - **Random Forest**: Menggunakan beberapa *decision tree* untuk meningkatkan akurasi dan stabilitas klasifikasi.
+    - **Boosting**: Mengkombinasikan model-model sederhana untuk memperbaiki kesalahan prediksi dan meningkatkan performa.
+3. Melakukan evaluasi model untuk memilih model terbaik berdasarkan metrik evaluasi yang sesuai, seperti akurasi, precision, recall, dan F1 score. Ini bertujuan untuk menentukan model yang paling efektif dalam mengklasifikasikan kepribadian individu berdasarkan data yang tersedia.
 
 ## Data Understanding
 Dataset yang digunakan pada proyek ini diambil dari 
 <br/>
-https://www.kaggle.com/datasets/mahdimashayekhi/mental-health
+https://www.kaggle.com/datasets/rakeshkapilavai/extrovert-vs-introvert-behavior-data
 <br/>
 ### EDA - Deskripsi Variabel
 ## Deskripsi Dataset
-Dataset yang digunakan terdiri dari **10.000 baris data** dan **14 kolom**, yang merepresentasikan berbagai informasi 
-terkait kondisi kesehatan mental individu. Berikut adalah penjelasan masing-masing kolom:
-- **age**: Usia responden dalam tahun.
-- **gender**: Jenis kelamin responden (Male, Female, Non-binary, dan Prefer not to say).
-- **employment_status**: Status pekerjaan responden (Employed, Student, Self-employed, dan Unemployed).
-- **work_environment**: Kondisi lingkungan kerja responden (Onsite, Online, dan Hybrid).
-- **mental_health_history**: Riwayat kesehatan mental sebelumnya (Yes/No).
-- **seeks_treatment**: Apakah responden pernah mencari perawatan kesehatan mental (Yes/No).
-- **stress_level**: Tingkat stres yang dialami responden, dengan rentang nilai 1–10.
-- **sleep_hours**: Jumlah rata-rata jam tidur per hari, dengan rentang nilai 1–10.
-- **physical_activity_days**: Jumlah hari dalam seminggu di mana responden melakukan aktivitas fisik, dengan rentang 1–7.
-- **depression_score**: Skor tingkat depresi yang dialami responden, dengan rentang 1–30.
-- **anxiety_score**: Skor tingkat kecemasan yang dialami responden, dengan rentang 1–21.
-- **social_support_score**: Skor tingkat dukungan sosial yang diterima responden, dengan rentang 1–100.
-- **productivity_score**: Skor tingkat produktivitas responden, dengan rentang 1–100.
-- **mental_health_risk**: Kategori risiko kesehatan mental hasil dari analisis data (High, Medium, Low).
+Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi mengenai perilaku sosial mereka serta tipe kepribadian. Respon ini menyangkut faktor-faktor seperti ketakutan berbicara di depan umum, kehadiran di acara sosial, dan bagaimana perasaan mereka setelah interaksi tersebut. Dataset tersebut mencakup 530 responden dengan karakteristik yang bervariasi, memungkinkan analisis yang mendalam tentang bagaimana perbedaan tipe kepribadian (introvert dan extrovert) memengaruhi tingkat keterlibatan sosial mereka. Berikut adalah penjelasan masing-masing kolom:
+- **Time_spent_Alone**: Waktu yang dihabiskan individu sendirian dalam sehari (dalam jam).
+- **Stage_fear**: Faktor yang menunjukkan ketakutan individu saat berbicara di depan umum (Ya/Tidak).
+- **Social_event_attendance**: Tingkat kehadiran individu di acara sosial (Ya/Tidak).
+- **Going_outside**: Frekuensi individu keluar untuk bersosialisasi (skala 0-10).
+- **Drained_after_social**: Apakah individu merasa lelah setelah berinteraksi sosial (Ya/Tidak).
+- **Friends_circle_size**: Ukuran lingkaran sosial individu (jumlah teman).
+- **Post_frequency**: Frekuensi individu membagikan pengalaman sosial secara online (skala 0-10).
+- **Personality**: Tipe kepribadian individu, yang dibedakan menjadi "Introvert" dan "Extrovert".
 
 ### Variable - variable pada dataset
-- Data Integer = age, stress_level, physical_activity_days, depression_score, anxiety_score, social_support_score.  
-- Data Float = sleep_hours, productivity_score.  
-- Data Object = gender, employment_status, work_environment, mental_health_history, seeks_treatment, mental_health_risk.
+- Data Float = Time_spent_Alone, Going_outside, Friends_circle_size, Post_frequency.  
+- Data Object = Stage_fear, Social_event_attendance, Drained_after_social, Personality.
 
 ### Missing Value, Data Duplikat dan Outlier
-- Tidak ditemukan missing value di dalam dataset.  
-- Tidak ditemukan outlier di dalam dataset.  
-- Tidak ditemukan data duplikat di dalam dataset.
+1. Dataset ini memiliki beberapa nilai yang hilang pada kolom-kolom berikut:
+   a. Time_spent_Alone: 63
+   b. Stage_fear: 73
+   c. Social_event_attendance: 62
+   d. Going_outside: 66
+   e. Drained_after_socializing: 52
+   f. Friends_circle_size: 77
+   g. Post_frequency: 65
+   Penanganan nilai yang hilang perlu dilakukan, dengan metode menghapus baris yang memiliki nilai hilang.
+3. Tidak ada outlier yang terdeteksi dalam dataset. Outlier dapat memengaruhi performa model prediksi dan perlu ditangani jika ada, namun dalam hal ini, data terlihat homogen dalam distribusinya.
+4. Setelah pemeriksaan, tidak ditemukan data duplikat dalam dataset ini. Keberadaan data duplikat dapat mengubah hasil analisis, sehingga penting untuk memeriksanya sebelum melanjutkan ke tahap berikutnya.
 
 ### EDA - Univariate Analysis
 Analisis univariat dilakukan untuk memahami distribusi masing-masing variabel secara individual. Beberapa temuan awal:
