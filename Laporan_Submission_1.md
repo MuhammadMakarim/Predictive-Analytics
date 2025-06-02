@@ -71,13 +71,15 @@ Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi men
 Analisis univariat dilakukan untuk memahami distribusi masing-masing variabel secara individual. Beberapa temuan awal:
 
 ##### Kolom Categorical 
-![Grafik Univariate Numeric Data](./gambar/univariate_categorical.png)
+![Grafik Univariate Categorical Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/b205b83e8ad8d6fe3115d64b4219b6799d6fffc9/Gambar/Uni_Categorical%20Feature.png))
+
 Pada kolom kategorikal, visualisasi berikut digunakan untuk menunjukkan frekuensi dari masing-masing kategori:
 - Terdapat dua kategori dalam fitur Stage_fear, di mana jumlah individu yang tidak mengalami ketakutan berbicara di depan umum (No) hampir seimbang dengan mereka yang mengalami ketakutan (Yes). Ini menunjukkan bahwa populasi dalam dataset ini memiliki proporsi yang hampir sama antara individu yang merasa nyaman untuk berbicara di depan umum dan yang tidak.
 - Terdapat dua kategori dalam fitur Personality, yang dibagi menjadi Extrovert dan Introvert, dengan hampir setengah dari populasi termasuk dalam masing-masing kategori. Ini menunjukkan adanya keseimbangan antara kepribadian extrovert dan introvert, yang bisa berpengaruh dalam interaksi sosial dan preferensi individu.
 
 ##### Kolom Numerik
-![Grafik Univariate Numeric Data](./gambar/univariate_numeric.png)
+![Grafik Univariate Numeric Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/b205b83e8ad8d6fe3115d64b4219b6799d6fffc9/Gambar/Uni_Numerical%20Feature_Histogram.png)
+
 Pada kolom numerik, visualisasi berikut digunakan untuk menunjukkan frekuensi dari masing-masing kategori:
 - Distribusi waktu yang dihabiskan sendirian 'Time_spent_Alone' menunjukkan variasi yang signifikan, dengan mayoritas individu menghabiskan antara 0 hingga 5 jam sendirian. Ini mungkin menunjukkan kecenderungan bahwa individu lebih suka sosial dibandingkan menghabiskan waktu sendiri, setidaknya dalam konteks ini.
 - Distribusi kehadiran di acara sosial 'Social_event_attendance' menunjukkan bahwa kebanyakan individu tidak terlalu terlibat dalam acara sosial, dengan frekuensi rendah di atas 5. Ini dapat menunjukkan tendensi sifat introverted dalam populasi ini, di mana individu merasa kurang terpanggil untuk menghadiri banyak acara sosial.
@@ -88,7 +90,7 @@ Pada kolom numerik, visualisasi berikut digunakan untuk menunjukkan frekuensi da
 ### EDA - Multivariate Analysis
 
 ##### Kolom Categorical
-![Grafik Multivariate Categorical Data](./gambar/multivariate_categorical.png)
+![Grafik Multivariate Categorical Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/b205b83e8ad8d6fe3115d64b4219b6799d6fffc9/Gambar/Multi_Korelasi%20variabel%20kategorikal%20terhadap%20numerik.png)
 
 - Stage_fear: Menunjukkan apakah individu mengalami ketakutan untuk berbicara di depan umum. Terdapat korelasi negatif dengan Social_event_attendance (nilai: -0.86), yang berarti individu yang memiliki ketakutan berbicara di depan umum biasanya cenderung menghadiri acara sosial lebih sedikit.
 - Introvert: Cenderung memiliki nilai tinggi pada Time_spent_Alone dan Stage_fear, serta rendah pada Social_event_attendance dan Going_outside. Mereka juga sering merasa drained setelah bersosialisasi. Dikenali dengan ukuran Friends_circle_size yang lebih kecil dan rendahnya frekuensi posting di media sosial.
@@ -97,7 +99,7 @@ Pada kolom numerik, visualisasi berikut digunakan untuk menunjukkan frekuensi da
 <br/>
 
 ##### Kolom Numerik
-![Grafik Multivariate Categorical Data](./gambar/multivariate_numeric.png)
+![Grafik Multivariate Categorical Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/b205b83e8ad8d6fe3115d64b4219b6799d6fffc9/Gambar/Multi_korelasi%20variabel%20numerik.png)
 
 - Time_spent_Alone: Mengukur waktu yang dihabiskan sendirian setiap hari dalam jam. Terdapat korelasi positif yang signifikan dengan Drained_after_socializing nilai 0.86, yang menunjukkan bahwa semakin banyak waktu dihabiskan sendirian, semakin besar kemungkinan individu merasa lelah setelah bersosialisasi.
 - Social_event_attendance: Mengukur seberapa sering individu menghadiri acara sosial. Korelasi negatif yang signifikan dengan Stage_fear mengindikasikan bahwa individu yang merasa takut berbicara di depan umum juga kurang memiliki frekuensi kehadiran di acara sosial, serta menunjukkan hubungan positif dengan Friends_circle_size nilai 0.73.
@@ -123,13 +125,16 @@ Bagian ini menjelaskan tahapan persiapan data yang telah dilakukan sebelum melak
 - AdaBoost, atau Adaptive Boosting, adalah algoritma ensemble lain yang mengkombinasikan beberapa klasifikator lemah untuk membentuk klasifikator yang lebih kuat. Proses ini bekerja dengan cara memberikan bobot lebih pada titik data yang keliru diprediksi oleh model sebelumnya, sehingga fokus untuk memperbaiki kesalahan adalah utama. Dalam implementasi di proyek ini, kita menggunakan 'n_estimators=50', yang menyatakan jumlah iterasi yang akan dilakukan. Kelebihan dari AdaBoost terletak pada kemampuannya untuk meningkatkan kinerja klasifikasi pada dataset yang tidak seimbang, terutama dalam situasi di mana kelas mayoritas dan minoritas sangat berbeda. Namun, ia juga rentan terhadap noise di data. Hasil evaluasi menunjukkan bahwa AdaBoost memberikan akurasi tertinggi di antara ketiga model, menjadikannya model yang paling efektif untuk kasus ini.
 
 ## Evaluasi
-![Grafik Akurasi Model](./gambar/accuracy2.png)
+
 Dalam tahap evaluasi, kinerja setiap model yang diterapkan dalam proyek ini akan dianalisis secara komprehensif menggunakan beberapa metrik evaluasi yang relevan. Metrik yang digunakan adalah akurasi, precision, recall, dan F1 score, yang semuanya penting untuk memahami bagaimana baiknya model dalam mengklasifikasikan kepribadian individu sebagai introvert atau extrovert.
 
+![Grafik Akurasi Model](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/b205b83e8ad8d6fe3115d64b4219b6799d6fffc9/Gambar/Akurasi%20KNN.png)
 - Model K-Nearest Neighbors (KNN) menunjukkan hasil yang sangat baik dengan akurasi sebesar 90.75%. Proses evaluasi dimulai dengan memprediksi kelas untuk data pengujian, dan hasilnya menunjukkan bahwa model ini sangat efektif. Dari analisis tersebut, kita dapat melihat bahwa model berhasil mengklasifikasikan 250 introvert dan 221 extrovert dengan benar. Namun, terdapat juga 22 kesalahan ketika introvert diprediksi sebagai extrovert dan 26 kesalahan lainnya. Metrik lain seperti precision untuk kategori extrovert adalah 0.89, recall 0.91, dan F1-score 0.90, yang semuanya menunjukkan kinerja model yang sesuai untuk konteks pengklasifikasian ini.
 
+![Grafik Akurasi Model](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/b205b83e8ad8d6fe3115d64b4219b6799d6fffc9/Gambar/Akurasi%20RF.png)
 - Model Random Forest mencatat akurasi sedikit lebih rendah, yakni 89.60%. Hasil evaluasi menunjukkan struktur yang mirip tetapi dengan sedikit perbedaan dalam klasifikasi. Hasil ini menunjukkan bahwa model berhasil mengklasifikasikan 246 introvert dan 219 extrovert dengan benar, meskipun ada 30 kesalahan dalam mengidentifikasi extrovert dan 24 kesalahan dalam mengidentifikasi introvert. Precision untuk kategori extrovert adalah 0.88, recall 0.90, dan F1-score 0.89, menunjukkan bahwa meskipun akurasinya sedikit di bawah KNN, Random Forest juga memberikan hasil yang solid dalam klasifikasi kepribadian.
 
+![Grafik Akurasi Model](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/b205b83e8ad8d6fe3115d64b4219b6799d6fffc9/Gambar/Akurasi%20Ada.png)
 - Model AdaBoost menunjukkan performa yang paling mengesankan dengan akurasi tertinggi yaitu 92.10%. Proses evaluasi menunjukkan hasil yang seimbang dalam mengklasifikasikan kedua kelas. Dari analisis ini, model berhasil mengklasifikasikan 252 introvert dan 226 extrovert dengan akurat, dengan hanya 24 kesalahan dalam klasifikasi extrovert dan 17 pada introvert. Precision untuk kategori extrovert adalah 0.93, recall 0.92, dan F1-score 0.92, menunjukkan kinerja yang sangat baik dalam klasifikasi.
 
 ### Penyelesaian permasalahan
@@ -157,7 +162,7 @@ Berdasarkan hasil evaluasi, KNN menghasilkan akurasi tertinggi, sementara AdaBoo
 Hasil analisis ini memberikan pemahaman yang lebih dalam tentang bagaimana kepribadian mempengaruhi partisipasi sosial dan memperkuat argumen bahwa pendekatan machine learning dapat memberikan wawasan berharga dalam analisis perilaku manusia. Secara keseluruhan, implementasi metode ini dapat menjadi landasan untuk pengembangan lebih lanjut.
 
 ## Referensi
-[1]: Kementerian Kesehatan Republik Indonesia, *Laporan Tematik Survei Kesehatan Indonesia Tahun 2023: Potret Indonesia Sehat*, Jakarta: Kementerian Kesehatan RI, 2024. Diterbitkan oleh Kementerian Kesehatan RI dan dikeluarkan oleh Badan Kebijakan Pembangunan Kesehatan. [Online]. Available: https://drive.google.com/file/d/1AnuDQgQufa5JSXEJWpBSv4r7v6d5YZm7/view. [Accessed: May 24, 2025].
+[1]: Peneliti, Analisis Kepribadian Berdasarkan Aktivitas Sosial, 2024. Dataset pribadi yang mencakup tanggapan individu mengenai perilaku sosial dan sifat kepribadian, termasuk data tentang rasa takut di atas panggung, kehadiran dalam acara sosial, dan frekuensi berbagi pengalaman sosial secara online. [Accessed: May 24, 2025].
 
 [2]: Universitas Gadjah Mada, Universitas Sumatera Utara, Universitas Hasanuddin, The University of 
 Queensland Australia, Johns Hopkins Bloomberg School of Public Health, and Kementerian Kesehatan Republik 
