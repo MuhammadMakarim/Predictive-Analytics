@@ -71,7 +71,7 @@ Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi men
 Analisis univariat dilakukan untuk memahami distribusi masing-masing variabel secara individual. Beberapa temuan awal:
 
 ##### Kolom Categorical 
-![Grafik Univariate Categorical Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/b205b83e8ad8d6fe3115d64b4219b6799d6fffc9/Gambar/Uni_Categorical%20Feature.png))
+![Grafik Univariate Categorical Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/b205b83e8ad8d6fe3115d64b4219b6799d6fffc9/Gambar/Uni_Categorical%20Feature.png)
 
 Pada kolom kategorikal, visualisasi berikut digunakan untuk menunjukkan frekuensi dari masing-masing kategori:
 - Terdapat dua kategori dalam fitur Stage_fear, di mana jumlah individu yang tidak mengalami ketakutan berbicara di depan umum (No) hampir seimbang dengan mereka yang mengalami ketakutan (Yes). Ini menunjukkan bahwa populasi dalam dataset ini memiliki proporsi yang hampir sama antara individu yang merasa nyaman untuk berbicara di depan umum dan yang tidak.
