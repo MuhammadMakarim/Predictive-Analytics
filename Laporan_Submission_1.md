@@ -63,6 +63,7 @@ Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi men
    - Drained_after_socializing: 52
    - Friends_circle_size: 77
    - Post_frequency: 65
+   
    Penanganan nilai yang hilang perlu dilakukan, dengan metode menghapus baris yang memiliki nilai hilang.
 3. Tidak ada outlier yang terdeteksi dalam dataset. Outlier dapat memengaruhi performa model prediksi dan perlu ditangani jika ada, namun dalam hal ini, data terlihat homogen dalam distribusinya.
 4. Setelah pemeriksaan, tidak ditemukan data duplikat dalam dataset ini. Keberadaan data duplikat dapat mengubah hasil analisis, sehingga penting untuk memeriksanya sebelum melanjutkan ke tahap berikutnya.
