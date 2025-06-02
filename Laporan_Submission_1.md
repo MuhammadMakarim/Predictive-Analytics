@@ -56,13 +56,13 @@ Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi men
 
 ### Missing Value, Data Duplikat dan Outlier
 1. Dataset ini memiliki beberapa nilai yang hilang pada kolom-kolom berikut:
-   a. Time_spent_Alone: 63
-   b. Stage_fear: 73
-   c. Social_event_attendance: 62
-   d. Going_outside: 66
-   e. Drained_after_socializing: 52
-   f. Friends_circle_size: 77
-   g. Post_frequency: 65
+   - Time_spent_Alone: 63
+   - Stage_fear: 73
+   - Social_event_attendance: 62
+   - Going_outside: 66
+   - Drained_after_socializing: 52
+   - Friends_circle_size: 77
+   - Post_frequency: 65
    Penanganan nilai yang hilang perlu dilakukan, dengan metode menghapus baris yang memiliki nilai hilang.
 3. Tidak ada outlier yang terdeteksi dalam dataset. Outlier dapat memengaruhi performa model prediksi dan perlu ditangani jika ada, namun dalam hal ini, data terlihat homogen dalam distribusinya.
 4. Setelah pemeriksaan, tidak ditemukan data duplikat dalam dataset ini. Keberadaan data duplikat dapat mengubah hasil analisis, sehingga penting untuk memeriksanya sebelum melanjutkan ke tahap berikutnya.
