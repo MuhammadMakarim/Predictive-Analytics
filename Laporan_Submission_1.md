@@ -162,8 +162,8 @@ Berdasarkan hasil evaluasi, KNN menghasilkan akurasi tertinggi, sementara AdaBoo
 Hasil analisis ini memberikan pemahaman yang lebih dalam tentang bagaimana kepribadian mempengaruhi partisipasi sosial dan memperkuat argumen bahwa pendekatan machine learning dapat memberikan wawasan berharga dalam analisis perilaku manusia. Secara keseluruhan, implementasi metode ini dapat menjadi landasan untuk pengembangan lebih lanjut.
 
 ## Referensi
-[1]: Peneliti, Analisis Kepribadian Berdasarkan Aktivitas Sosial, 2024. Dataset pribadi yang mencakup tanggapan individu mengenai perilaku sosial dan sifat kepribadian, termasuk data tentang rasa takut di atas panggung, kehadiran dalam acara sosial, dan frekuensi berbagi pengalaman sosial secara online. [Accessed: May 24, 2025].
+[1]: McCrae, R. R., Costa, P. T. (2008). A five-factor theory of personality. American Psychological Association. [Online]. Available: https://www.researchgate.net/publication/284978581_A_five-factor_theory_of_personality. [Accessed: May 24, 2025].
 
-[2]: Universitas Gadjah Mada, Universitas Sumatera Utara, Universitas Hasanuddin, The University of 
-Queensland Australia, Johns Hopkins Bloomberg School of Public Health, and Kementerian Kesehatan Republik 
-Indonesia, *I-NAMHS: Indonesia-National Adolescent Mental Health Survey*, 2022.
+[2]: Cain, S. (2013). Quiet: The Power of Introverts in a World That Can't Stop Talking. New York: Crown Publishing Group.
+
+[3]: McCrae, R. R. (2008). Cited by 8023 — The five-factor model (FFM) of personality is an empirical generalization about the covariation of personality traits.
