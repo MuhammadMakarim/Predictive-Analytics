@@ -72,149 +72,91 @@ Analisis univariat dilakukan untuk memahami distribusi masing-masing variabel se
 
 ##### Kolom Categorical 
 ![Grafik Univariate Numeric Data](./gambar/univariate_categorical.png)
-- Terdapat 4 kategori dalam fitur gender yang didominasi dengan kategori Male dan Female dengan perbandingan yang cukup seimbang. 
-- Terdapat 4 kategori dalam fitur employment, secara berurutan dari yang paling banyak adalah employed, kemudian diikuti student, self emoployed, dan yang paling sedikit adalah unemployed.
-- Terdapat 3 kategori dalam fitur work_environtment. secara berurutan dari yang paling banyak adalah onsite, Remote, dan Hybrid.
-- Terdapat 2 kategori dalam fitur mental_health_history. dengan hampir 70% data memiliki value no yang berarti sebagian besar tidak memiliki riwayat penyakit mental.
-- Terdapat 2 kategori dalam fitur seeks_treatment, yaitu yes dan no. dengan hampir 60% data menyatakan no yang artinya belum pernah mencari bantuan professional dalam masalah kesehatan mental.
-- Terdapat 3 kategori dalam fitur mental_health_risk. Secara berurutan dari yang terbesar adalah medium sebesar 58,9% high sebesar 23,7%, dan low sebesar 17,4%.
+Pada kolom kategorikal, visualisasi berikut digunakan untuk menunjukkan frekuensi dari masing-masing kategori:
+- Terdapat dua kategori dalam fitur Stage_fear, di mana jumlah individu yang tidak mengalami ketakutan berbicara di depan umum (No) hampir seimbang dengan mereka yang mengalami ketakutan (Yes). Ini menunjukkan bahwa populasi dalam dataset ini memiliki proporsi yang hampir sama antara individu yang merasa nyaman untuk berbicara di depan umum dan yang tidak.
+- Terdapat dua kategori dalam fitur Personality, yang dibagi menjadi Extrovert dan Introvert, dengan hampir setengah dari populasi termasuk dalam masing-masing kategori. Ini menunjukkan adanya keseimbangan antara kepribadian extrovert dan introvert, yang bisa berpengaruh dalam interaksi sosial dan preferensi individu.
 
 ##### Kolom Numerik
 ![Grafik Univariate Numeric Data](./gambar/univariate_numeric.png)
-- Data pada kolom stress_level, age, physical_activity_days, anxiety_score, dan social_support_score cenderung memiliki persebaran yang merata.  
-- Terdapat peningkatan jumlah yang signifikan pada data fitur depression_score pada nilai maksimal (30).  
-- Terdapat peningkatan jumlah yang signifikan pada data fitur productivity_score pada nilai maksimal (100).  
-- Data sleep_hours cenderung terdistribusi normal.
+Pada kolom numerik, visualisasi berikut digunakan untuk menunjukkan frekuensi dari masing-masing kategori:
+- Distribusi waktu yang dihabiskan sendirian 'Time_spent_Alone' menunjukkan variasi yang signifikan, dengan mayoritas individu menghabiskan antara 0 hingga 5 jam sendirian. Ini mungkin menunjukkan kecenderungan bahwa individu lebih suka sosial dibandingkan menghabiskan waktu sendiri, setidaknya dalam konteks ini.
+- Distribusi kehadiran di acara sosial 'Social_event_attendance' menunjukkan bahwa kebanyakan individu tidak terlalu terlibat dalam acara sosial, dengan frekuensi rendah di atas 5. Ini dapat menunjukkan tendensi sifat introverted dalam populasi ini, di mana individu merasa kurang terpanggil untuk menghadiri banyak acara sosial.
+- Frekuensi keluar bersosialisasi 'Going_outside' menunjukkan bahwa banyak individu memiliki frekuensi rendah dalam bersosialisasi di luar rumah, terutama di bawah nilai 5. Angka ini mencerminkan kurangnya interaksi sosial yang aktif di luar lingkungan rumah atau yang lebih dikenal, mungkin sesuai dengan karakteristik introvert.
+- Ukuran lingkaran teman 'Friends_circle_size' menunjukkan bahwa sebagian besar individu memiliki lingkaran sosial yang kecil, dengan mayoritas berada di bawah angka 6. Ini menunjukkan bahwa individu cenderung memiliki relasi sosial yang lebih dalam dengan jumlah teman yang terbatas.
+- Frekuensi berbagi pengalaman secara online 'Post_frequency' juga menunjukkan mayoritas individu memiliki nilai rendah, menunjukkan kecenderungan untuk tidak aktif sharing di media sosial. Hal ini bisa terkait erat dengan kepribadian introvert, di mana mereka kurang merasa nyaman untuk membagikan pengalaman pribadi secara publik.
 
 ### EDA - Multivariate Analysis
 
 ##### Kolom Categorical
 ![Grafik Multivariate Categorical Data](./gambar/multivariate_categorical.png)
 
-- Pada fitur gender, risiko kesehatan mental cenderung merata di semua gender dengan mayoritas berada pada risiko sedang.  
-  Tidak ada kategori tertentu yang cenderung memiliki risiko kesehatan mental tinggi, sedang, maupun rendah.  
-- Pada fitur employment_status, risiko kesehatan mental pada setiap kategori cenderung merata.  
-  Tidak ada kategori tertentu yang cenderung memiliki risiko kesehatan mental tinggi, sedang, maupun rendah.  
-- Pada fitur work_environment, risiko kesehatan mental pada setiap kategori juga cenderung merata.  
-  Tidak ada kategori tertentu yang cenderung memiliki risiko kesehatan mental tinggi, sedang, maupun rendah.  
-- Pada fitur mental_health_history, risiko kesehatan mental pada setiap kategori cenderung merata.  
-  Tidak ada kategori tertentu yang cenderung memiliki risiko kesehatan mental tinggi, sedang, maupun rendah.  
-- Pada fitur seeks_treatment, tidak ada kategori tertentu yang cenderung memiliki risiko kesehatan mental tinggi, sedang, maupun rendah.  
+- Stage_fear: Menunjukkan apakah individu mengalami ketakutan untuk berbicara di depan umum. Terdapat korelasi negatif dengan Social_event_attendance (nilai: -0.86), yang berarti individu yang memiliki ketakutan berbicara di depan umum biasanya cenderung menghadiri acara sosial lebih sedikit.
+- Introvert: Cenderung memiliki nilai tinggi pada Time_spent_Alone dan Stage_fear, serta rendah pada Social_event_attendance dan Going_outside. Mereka juga sering merasa drained setelah bersosialisasi. Dikenali dengan ukuran Friends_circle_size yang lebih kecil dan rendahnya frekuensi posting di media sosial.
+- Extrovert: Menunjukkan waktu yang lebih rendah untuk dihabiskan sendirian dan lebih aktif dalam Social_event_attendance dan Going_outside. Memiliki ukuran Friends_circle_size yang lebih besar dan lebih aktif dalam membagikan pengalaman mereka di media sosial.
 
 <br/>
-
-- Fitur seeks_treatment menunjukkan hubungan yang signifikan secara statistik terhadap fitur mental_health_risk.  
-  Hal ini dapat diartikan bahwa kecenderungan individu untuk mencari bantuan atau perawatan memiliki pengaruh yang signifikan  
-  terhadap tingkat risiko kesehatan mental mereka.  
-- Fitur lain seperti gender, employment_status, work_environment, dan mental_health_history tidak menunjukkan hubungan  
-  statistik yang signifikan terhadap fitur mental_health_risk.  
-  Hal ini dapat diartikan bahwa faktor-faktor tersebut tidak cukup kuat untuk membedakan tingkat risiko kesehatan mental pada individu.
 
 ##### Kolom Numerik
 ![Grafik Multivariate Categorical Data](./gambar/multivariate_numeric.png)
-- Pada fitur age, tidak terdapat kalangan umur tertentu yang memiliki kecenderungan risiko kesehatan mental kategori high,  
-  medium, maupun low.  
-- Pada fitur stress_level, variasi stres pada setiap individu di dalam kategori mental_health_risk cenderung mirip,  
-  namun tingkat stres secara umum (berdasarkan median) pada fitur mental_health_risk kategori low cenderung memiliki  
-  tingkat stres yang lebih rendah.  
-- Pada fitur sleep_hours, tidak terdapat waktu tidur tertentu yang memiliki kecenderungan kesehatan mental kategori  
-  high, medium, maupun low.  
-- Pada fitur physical_activity_days, individu dengan risiko kesehatan mental kategori high menunjukkan kecenderungan  
-  memiliki tingkat aktivitas fisik yang lebih tinggi dibandingkan kategori lainnya. Individu dengan risiko kesehatan mental  
-  high dan low memiliki median aktivitas fisik mingguan yang sama, yaitu sekitar 4 hari. Sementara itu, individu dengan  
-  risiko kategori medium memiliki median aktivitas fisik yang lebih rendah, yaitu sekitar 3 hari.  
-- Pada fitur depression_score, menunjukkan bahwa semakin tinggi risiko kesehatan mental seseorang, semakin tinggi pula  
-  skor depresi yang dimilikinya. Ini menunjukkan bahwa kolom depression_score memiliki korelasi yang tinggi dengan  
-  kolom mental_health_risk.  
-- Pada fitur anxiety_score, menunjukkan bahwa semakin tinggi risiko kesehatan mental seseorang, semakin tinggi pula  
-  anxiety_score yang dimilikinya. Ini menunjukkan bahwa kolom anxiety_score memiliki korelasi yang cukup tinggi dengan  
-  kolom mental_health_risk.  
-- Distribusi nilai pada fitur social_support terlihat relatif merata di setiap kategori mental_health_risk, tanpa adanya  
-  perbedaan yang mencolok di antara kategori tersebut.  
-- Pada fitur productivity_score menunjukkan korelasi yang kuat dengan fitur mental_health_risk, dimana risiko kesehatan  
-  mental individu dengan kategori low memiliki tingkat produktivitas tertinggi dengan nilai median sekitar 95, kemudian  
-  individu dengan risiko kesehatan mental kategori medium memiliki nilai median tingkat produktivitas yang lebih rendah  
-  yaitu sekitar 80, dan yang terakhir adalah individu dengan tingkat risiko kesehatan mental kategori high memiliki  
-  tingkat produktivitas terendah dengan median sekitar 60-an.
+
+- Time_spent_Alone: Mengukur waktu yang dihabiskan sendirian setiap hari dalam jam. Terdapat korelasi positif yang signifikan dengan Drained_after_socializing nilai 0.86, yang menunjukkan bahwa semakin banyak waktu dihabiskan sendirian, semakin besar kemungkinan individu merasa lelah setelah bersosialisasi.
+- Social_event_attendance: Mengukur seberapa sering individu menghadiri acara sosial. Korelasi negatif yang signifikan dengan Stage_fear mengindikasikan bahwa individu yang merasa takut berbicara di depan umum juga kurang memiliki frekuensi kehadiran di acara sosial, serta menunjukkan hubungan positif dengan Friends_circle_size nilai 0.73.
+- Going_outside: Mengukur frekuensi keluar untuk bersosialisasi, dinilai dari 0 hingga 10. Memiliki korelasi positif dengan Social_event_attendance (nilai: 0.75). individu yang sering keluar cenderung menghadiri lebih banyak acara sosial. Ini biasanya lebih banyak terlihat pada extrovert.
+- Drained_after_socializing: Menunjukkan apakah individu merasa lelah setelah bersosialisasi. Korelasi positif dengan Time_spent_Alone (nilai: 0.86) menunjukkan bahwa individu yang menghabiskan lebih banyak waktu sendirian lebih cenderung merasa lelah setelah bersosialisasi.
+- Friends_circle_size: Mengukur jumlah teman dekat yang dimiliki individu. Memiliki korelasi positif dengan Social_event_attendance (nilai: 0.73), dimana individu dengan lingkaran teman yang lebih besar cenderung lebih aktif dalam menghadiri acara sosial.
+- Post_frequency: Mengukur seberapa sering individu membagikan pengalaman sosial secara online. Terdapat korelasi negatif dengan Time_spent_Alone (nilai: -0.73), mengindikasikan bahwa individu yang menghabiskan lebih banyak waktu sendiri biasanya lebih sedikit membagikan pengalaman mereka di media sosial.
 
 
 ## Data Preparation
-- Menghapus kolom yang tidak relevan. Beberapa kolom tersebut adalah 'gender', 'employment_status', 'work_environment', 'mental_health_history', 'age', 'stress_level', 'sleep_hours', dan 'social_support_score' dihapus karena tidak memiliki pengaruh yang signifikan terhadap tingkat resiko kesehatan mental (variabel target).
-- Melakukan Label Encoding untuk seeks_treatment (data kategorikal non ordinal dengan 2 label memungkinkan untuk dilakukan label encoding) dan mental_health_risk adalah data ordinal sehingga encoder dilakukan dengan metode labeling.
-- Melakukan spliting pada dataset dengan rasio pembagian 90% untuk data training dan 10% untuk data testing. Berdasarkan data yang berjumlah 10.000, rasio ini sudaha baik karena model memiliki cukup data untuk training dan cukup data untuk melakukan testing.
-- Melakukan Scalling dengan StandardScaller untuk membuat data numerik berada pada rentang nilai yang sama. Hal ini dilakukan agar algoritma tidak bias, kecenderungan model seperti KNN menganggap kolom dengan rentang nilai yang tinggi adalah kolom yang penting. 
+Bagian ini menjelaskan tahapan persiapan data yang telah dilakukan sebelum melakukan pemodelan. Proses ini penting untuk memastikan bahwa data yang digunakan berkualitas dan siap untuk analisis lebih lanjut. Berikut adalah tahapan yang diambil:
+
+- Variabel kategorikal seperti Stage_fear, dan Personality diubah menjadi bentuk numerik agar dapat digunakan dalam model. Metode One-Hot Encoding diterapkan untuk fitur tersebut.
+- Data dibagi menjadi set pelatihan dan pengujian, biasanya dengan proporsi sekitar 80/20. Metode train_test_split dari sklearn digunakan untuk membagi data.
+- Untuk memastikan bahwa semua fitur memiliki skala yang sama, standardisasi dilakukan menggunakan StandardScaler dari sklearn. Ini penting untuk algoritma yang sensitif terhadap skala fitur.
+- Principal Component Analysis (PCA) diterapkan untuk mengurangi dimensi dari fitur-fitur yang ada tanpa kehilangan informasi yang signifikan. Ini membantu dalam visualisasi dan juga dapat mempercepat proses pelatihan model.
 
 ## Modeling
-- KNN (K-Nearest Neighbor) adalah model machine learning yang bekerja dengan cara membandingkan jarak dari suatu sampel  
-  ke sampel pelatihan yang lain dengan memilih sejumlah (k) tetangga terdekat. Dalam studi kasus ini,  
-  model K-Nearest Neighbors (KNN) digunakan untuk mengklasifikasikan risiko kesehatan mental dengan parameter  
-  n_neighbors=10, yang berarti setiap prediksi didasarkan pada 10 tetangga terdekat dalam data latih. KNN adalah  
-  algoritma yang sederhana dan mudah dipahami, namun memiliki kelemahan seperti kurang efektif pada data berdimensi  
-  tinggi (curse of dimensionality), sensitif terhadap outlier, dan performa yang menurun jika data tidak seimbang.  
-  Selain itu, waktu prediksi bisa menjadi lambat pada dataset besar karena perlu menghitung jarak ke seluruh data latih.
+- K-Nearest Neighbors (KNN) adalah algoritma yang berbasis pada metode instance-based learning. Metode ini bekerja dengan cara mencari k tetangga terdekat dari data yang ingin diprediksi. Dalam implementasinya, KNN mengukur jarak antara titik data dan semua titik lainnya dalam dataset, kemudian memilih k titik terdekat untuk menentukan kelas dari titik yang sedang diprediksi. Dalam proyek ini, kita menerapkan KNN dengan parameter 'n_neighbors=5', yang berarti model akan mempertimbangkan lima tetangga terdekat. Kelebihan dari KNN adalah kesederhanaannya serta kemampuannya untuk bekerja dengan masalah non-linier, namun kekurangannya mencakup ketidakmampuannya dalam menangani multikolinearitas dan kecenderungannya terhadap outlier. Hasil evaluasi menunjukkan bahwa model KNN dapat mencapai akurasi tinggi, sehingga membuatnya menjadi pilihan kuat untuk klasifikasi kepribadian.
 
-- Random Forest adalah algoritma machine learning yang digunakan untuk menyelesaikan masalah klasifikasi dan regresi.  
-  Random Forest adalah kumpulan dari beberapa model decision tree yang masing-masing memiliki hyperparameter berbeda dan  
-  dilatih pada beberapa bagian data yang berbeda. Dengan melakukan beberapa keputusan sekaligus melalui beberapa pohon,  
-  algoritma Random Forest sangat cocok digunakan pada kasus klasifikasi.  
-  Random Forest merupakan metode ensemble yang menggabungkan hasil dari banyak pohon keputusan untuk meningkatkan  
-  akurasi dan mengurangi risiko overfitting. Dalam studi kasus ini, model yang dibangun menggunakan n_estimators=50,  
-  artinya 50 pohon dibangun, serta max_depth=16 yang membatasi kedalaman maksimal tiap pohon untuk mengontrol kompleksitas model.  
-  Parameter random_state=55 digunakan agar hasil pelatihan konsisten dan dapat direproduksi. Sementara itu, n_jobs=-1  
-  memungkinkan model memanfaatkan seluruh inti CPU yang tersedia untuk mempercepat proses pelatihan. Random Forest sangat kuat  
-  dalam menangani data kompleks dan tahan terhadap noise, tetapi model ini sulit diinterpretasikan dan membutuhkan sumber daya  
-  komputasi yang lebih besar.
+- Random Forest adalah metode ensemble yang terdiri dari banyak pohon keputusan. Setiap pohon menghasilkan suara, dan kelas yang paling banyak dipilih menjadi hasil akhir dari prediksi. Model ini sangat efektif untuk mengurangi risiko overfitting, yang sering kali menjadi masalah pada model pohon keputusan tunggal. Dalam proyek ini, Random Forest diterapkan dengan parameter 'n_estimators=100', digunakan untuk menentukan jumlah pohon keputusan yang akan dibuat. Kelebihan dari Random Forest termasuk mampu menangani dataset besar dengan baik dan tidak memerlukan pemilihan fitur yang begitu kritis. Namun, model ini bisa menjadi lebih sulit untuk diinterpretasikan dibandingkan dengan model yang lebih sederhana. Hasil evaluasi menunjukkan bahwa meskipun akurasinya sedikit lebih rendah ketimbang KNN, Random Forest tetap memberikan hasil yang solid dan konsisten dalam klasifikasi tipe kepribadian.
 
-- Boosting adalah metode klasifikasi yang menggabungkan banyak model sederhana secara bertahap untuk meningkatkan  
-  akurasi dengan fokus memperbaiki kesalahan prediksi sebelumnya. Dalam studi kasus ini, AdaBoostClassifier digunakan  
-  sebagai metode boosting, dengan learning_rate=0.05, yang menentukan seberapa besar kontribusi setiap model lemah dalam pembelajaran bertahap.  
-  Model ini juga menggunakan random_state=55 untuk memastikan hasil yang konsisten. Boosting bekerja dengan memperbaiki  
-  kesalahan model sebelumnya secara iteratif, sehingga meningkatkan performa keseluruhan. Namun, AdaBoost dapat menjadi  
-  sensitif terhadap outlier dan noise, serta memiliki waktu pelatihan yang lebih lambat dibandingkan beberapa metode lain  
-  karena proses pembelajarannya yang bertahap.
+- AdaBoost, atau Adaptive Boosting, adalah algoritma ensemble lain yang mengkombinasikan beberapa klasifikator lemah untuk membentuk klasifikator yang lebih kuat. Proses ini bekerja dengan cara memberikan bobot lebih pada titik data yang keliru diprediksi oleh model sebelumnya, sehingga fokus untuk memperbaiki kesalahan adalah utama. Dalam implementasi di proyek ini, kita menggunakan 'n_estimators=50', yang menyatakan jumlah iterasi yang akan dilakukan. Kelebihan dari AdaBoost terletak pada kemampuannya untuk meningkatkan kinerja klasifikasi pada dataset yang tidak seimbang, terutama dalam situasi di mana kelas mayoritas dan minoritas sangat berbeda. Namun, ia juga rentan terhadap noise di data. Hasil evaluasi menunjukkan bahwa AdaBoost memberikan akurasi tertinggi di antara ketiga model, menjadikannya model yang paling efektif untuk kasus ini.
 
 ## Evaluasi
 ![Grafik Akurasi Model](./gambar/accuracy2.png)
+Dalam tahap evaluasi, kinerja setiap model yang diterapkan dalam proyek ini akan dianalisis secara komprehensif menggunakan beberapa metrik evaluasi yang relevan. Metrik yang digunakan adalah akurasi, precision, recall, dan F1 score, yang semuanya penting untuk memahami bagaimana baiknya model dalam mengklasifikasikan kepribadian individu sebagai introvert atau extrovert.
 
-Evaluasi model dilakukan menggunakan metric accuracy, precision, Recall, dan F1-score untuk mengukur performa dari 
-masing-masing model yang digunakan yaitu KNN, Random Forest, dan Boosting Algorithm. 
-Berdasarkan hasil akurasi didapatkan informasi sebagai berikut:
-- Model terbaik model dengan algoritma random forest yang menghasilkan akurasi, precision, f1-score, dan recall tertinggi, 
-yaitu seluruhnya sebesar 99,4%.
+- Model K-Nearest Neighbors (KNN) menunjukkan hasil yang sangat baik dengan akurasi sebesar 90.75%. Proses evaluasi dimulai dengan memprediksi kelas untuk data pengujian, dan hasilnya menunjukkan bahwa model ini sangat efektif. Dari analisis tersebut, kita dapat melihat bahwa model berhasil mengklasifikasikan 250 introvert dan 221 extrovert dengan benar. Namun, terdapat juga 22 kesalahan ketika introvert diprediksi sebagai extrovert dan 26 kesalahan lainnya. Metrik lain seperti precision untuk kategori extrovert adalah 0.89, recall 0.91, dan F1-score 0.90, yang semuanya menunjukkan kinerja model yang sesuai untuk konteks pengklasifikasian ini.
 
-- Model kedua terbaik adalah KNN yang menghasilkan akurasi, precision, f1-score, dan recall tidak berbeda jauh dengan random 
-forest yaitu semuanya sebesar 97,6%.
+- Model Random Forest mencatat akurasi sedikit lebih rendah, yakni 89.60%. Hasil evaluasi menunjukkan struktur yang mirip tetapi dengan sedikit perbedaan dalam klasifikasi. Hasil ini menunjukkan bahwa model berhasil mengklasifikasikan 246 introvert dan 219 extrovert dengan benar, meskipun ada 30 kesalahan dalam mengidentifikasi extrovert dan 24 kesalahan dalam mengidentifikasi introvert. Precision untuk kategori extrovert adalah 0.88, recall 0.90, dan F1-score 0.89, menunjukkan bahwa meskipun akurasinya sedikit di bawah KNN, Random Forest juga memberikan hasil yang solid dalam klasifikasi kepribadian.
 
-- Model terburuk untuk studi kasus ini adalah model yang dibangun dengan algoritma Boosting yang menghasilkan akurasi, 
-precision, f1-score dan recall yang cukup rendah, yaitu secara berturut-turut 59,3%; 35,1%; 44,1%; dan 59,3%.
+- Model AdaBoost menunjukkan performa yang paling mengesankan dengan akurasi tertinggi yaitu 92.10%. Proses evaluasi menunjukkan hasil yang seimbang dalam mengklasifikasikan kedua kelas. Dari analisis ini, model berhasil mengklasifikasikan 252 introvert dan 226 extrovert dengan akurat, dengan hanya 24 kesalahan dalam klasifikasi extrovert dan 17 pada introvert. Precision untuk kategori extrovert adalah 0.93, recall 0.92, dan F1-score 0.92, menunjukkan kinerja yang sangat baik dalam klasifikasi.
 
 ### Penyelesaian permasalahan
-1. Setelah melakukan proses EDA, berhasil dilakukan identifikasi fitur-fitur penting dalam klasifikasi resiko kesehatan 
-mental yaitu: seeks_treatment, physical_activity_days,	depression_score,	anxiety_score, dan	productivity_score
-2. Didalam proyek ini telah dibangun  3 algoritma klasifikasi untuk melakukan prediksi klasifikasi resiko kesehatan mental.
-3 model yang dibangun adalah : KNN, Random Forest, dan Boosting Algorithm. Penggunaan parameter seperti n_neighbors, 
-n_estimators, dan learning_rate juga sudah dioptimalkan sesuai kebutuhan.
-3. Dari evaluasi yang dilakukan, Random Forest terbukti sebagai model paling optimal, karena memiliki nilai tertinggi untuk semua 
-metrik dibandingkan model lain. Meskipun KNN mencapai metrik yang hampir sama dengan Random Forest, semua metrik evaluasi 
-yang dihasilkan masih lebih rendah. 
+Dalam proyek ini berfokus pada analisis dan klasifikasi kepribadian individu berdasarkan aktivitas sosial mereka, dengan tujuan menjawab tiga rumusan masalah yang telah ditentukan sebelumnya.
+1. Faktor yang Mempengaruhi Tingkat Aktivitas Sosial
+   Untuk memahami faktor-faktor yang mempengaruhi tingkat aktivitas sosial individu, kami mengidentifikasi dan menganalisis variabel-variabel yang terkandung dalam dataset, seperti rasa takut di atas panggung, kehadiran dalam acara sosial, dan perasaan kelelahan setelah berinteraksi sosial. Data menunjukkan bahwa kepribadian (introvert vs. extrovert) memiliki dampak signifikan terhadap keterlibatan individu dalam aktivitas sosial. Individu yang dikategorikan sebagai extrovert cenderung lebih aktif dalam berpartisipasi dalam kegiatan sosial, sementara introvert menunjukkan partisipasi yang lebih rendah.
+   
+2. Pengembangan Model Machine Learning
+   Setelah memahami faktor-faktor yang mempengaruhi, langkah selanjutnya adalah membangun model machine learning untuk melakukan klasifikasi. Tiga algoritma yang diterapkan adalah K-Nearest Neighbors (KNN), Random Forest, dan AdaBoost.
+- K-Nearest Neighbors (KNN) diterapkan untuk mengeksplorasi pola klasifikasi dengan pendekatan berbasis tetangga terdekat. Dengan mengatur parameter n_neighbors=5, model ini menunjukkan akurasi yang tinggi, mencapai 90.75%.
+- Random Forest menggunakan teknik ensemble dari berbagai pohon keputusan untuk memprediksi kepribadian. Meskipun akurasinya sedikit lebih rendah di 89.60%, model ini menawarkan kestabilan yang baik dan mengurangi risiko overfitting.
+- AdaBoost, sebagai algoritma boosting yang mengoptimalkan klasifikasi melalui penguatan klasifikator lemah, mencapai akurasi tertinggi di 92.10%. Kekuatan AdaBoost terletak pada kemampuannya memperbaiki kesalahan dari model sebelumnya, membuatnya sangat efektif dalam menghadapi data yang tidak seimbang.
+
+3. Pemilihan Model Terbaik Berdasarkan Metrik Evaluasi
+   Dalam tahap terakhir, kami melakukan evaluasi terhadap ketiga model menggunakan metrik seperti akurasi, precision, recall, dan F1 score. Metrik ini memungkinkan kami untuk menentukan keandalan masing-masing model dalam mengklasifikasikan kepribadian. Hasil evaluasi menunjukkan bahwa:
+- KNN memberikan akurasi tinggi namun dengan trade-off dalam beberapa metrik precision dan recall.
+- Random Forest masih menunjukkan akurasi yang solid, meskipun sedikit lebih rendah dibanding KNN.
+- AdaBoost berhasil menunjukkan performa terbaik dalam hal akurasi, precision, dan recall, menjadikannya model pilihan utama untuk klasifikasi kepribadian.
 
 ### Kesimpulan 
-Analisis fitur mengungkapkan bahwa seeks_treatment, physical_activity_days, depression_score, anxiety_score, dan 
-productivity_score merupakan variabel paling penting yang memengaruhi prediksi risiko kesehatan mental.
+Proyek ini berhasil mengidentifikasi dan menganalisis hubungan antara kepribadian, yaitu introvert dan extrovert, dengan tingkat aktivitas sosial individu. Melalui proses pemodelan dengan tiga algoritma machine learning, yaitu K-Nearest Neighbors (KNN), Random Forest, dan AdaBoost. Serta telah menunjukkan bahwa masing-masing model memiliki kelebihan dan kelemahan tersendiri.
 <br/>
-Berdasarkan hasil evaluasi, model Random Forest merupakan model terbaik untuk prediksi klasifikasi risiko kesehatan 
-mental pada studi kasus ini. Model ini menunjukkan performa tertinggi pada semua metrik evaluasi dibandingkan dengan 
-model lainnya.
+Berdasarkan hasil evaluasi, KNN menghasilkan akurasi tertinggi, sementara AdaBoost menunjukkan kemampuan terbaik dalam mengatasi permasalahan klasifikasi tidak seimbang, diikuti oleh Random Forest yang memberikan stabilitas. Evaluasi menggunakan metrik akurasi, precision, recall, dan F1 score menyoroti kinerja setiap model dan membantu menentukan model terbaik untuk prediksi kepribadian.
 <br/>
-Meskipun model KNN memiliki nilai akurasi, recall, precision, dan F1-score yang sedikit lebih rendah, selisihnya 
-tidak signifikan sehingga model ini tetap dapat dipertimbangkan sebagai alternatif.
-<br/>
-Dengan tercapainya tujuan prediksi risiko kesehatan mental secara dini, diharapkan proyek ini dapat membantu 
-meningkatkan kesadaran individu untuk lebih cepat mencari bantuan atau perawatan ketika terdapat indikasi risiko 
-kesehatan mental yang dialami.
-![Grafik Akurasi Model](./gambar/accuracy.png)
-## Referensi
+Hasil analisis ini memberikan pemahaman yang lebih dalam tentang bagaimana kepribadian mempengaruhi partisipasi sosial dan memperkuat argumen bahwa pendekatan machine learning dapat memberikan wawasan berharga dalam analisis perilaku manusia. Secara keseluruhan, implementasi metode ini dapat menjadi landasan untuk pengembangan lebih lanjut.
 
+## Referensi
 [1]: Kementerian Kesehatan Republik Indonesia, *Laporan Tematik Survei Kesehatan Indonesia Tahun 2023: Potret Indonesia Sehat*, Jakarta: Kementerian Kesehatan RI, 2024. Diterbitkan oleh Kementerian Kesehatan RI dan dikeluarkan oleh Badan Kebijakan Pembangunan Kesehatan. [Online]. Available: https://drive.google.com/file/d/1AnuDQgQufa5JSXEJWpBSv4r7v6d5YZm7/view. [Accessed: May 24, 2025].
 
 [2]: Universitas Gadjah Mada, Universitas Sumatera Utara, Universitas Hasanuddin, The University of 
