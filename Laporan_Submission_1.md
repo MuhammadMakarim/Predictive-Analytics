@@ -40,7 +40,7 @@ https://www.kaggle.com/datasets/rakeshkapilavai/extrovert-vs-introvert-behavior-
 <br/>
 ### EDA - Deskripsi Variabel
 ## Deskripsi Dataset
-Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi mengenai perilaku sosial mereka serta tipe kepribadian. Respon ini menyangkut faktor-faktor seperti ketakutan berbicara di depan umum, kehadiran di acara sosial, dan bagaimana perasaan mereka setelah interaksi tersebut. Dataset tersebut mencakup 530 responden dengan karakteristik yang bervariasi, memungkinkan analisis yang mendalam tentang bagaimana perbedaan tipe kepribadian (introvert dan extrovert) memengaruhi tingkat keterlibatan sosial mereka. Berikut adalah penjelasan masing-masing kolom:
+Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi mengenai perilaku sosial mereka serta tipe kepribadian. Respon ini menyangkut faktor-faktor seperti ketakutan berbicara di depan umum, kehadiran di acara sosial, dan bagaimana perasaan mereka setelah interaksi tersebut. Dataset tersebut berjumlah 2838 data dengan karakteristik yang bervariasi, memungkinkan analisis yang mendalam tentang bagaimana perbedaan tipe kepribadian (introvert dan extrovert) memengaruhi tingkat keterlibatan sosial mereka. Berikut adalah penjelasan masing-masing kolom:
 - **Time_spent_Alone**: Waktu yang dihabiskan individu sendirian dalam sehari (dalam jam).
 - **Stage_fear**: Faktor yang menunjukkan ketakutan individu saat berbicara di depan umum (Ya/Tidak).
 - **Social_event_attendance**: Tingkat kehadiran individu di acara sosial (Ya/Tidak).
