@@ -480,20 +480,20 @@ Berdasarkan hasil evaluasi model yang ditampilkan, mari kita bandingkan performa
 1. KNN (K-Nearest Neighbors)
   *   Akurasi: 91.4%
   *   Confusion Matrix:
-      * Introvert: 250 benar, 26 salah
-      * Extrovert: 221 benar, 22 salah
+      * Introvert: 184
+      * Extrovert: 236
 
 2. AdaBoost
   *   Akurasi: 93.0%
   *   Confusion Matrix:
-      * Introvert: 252 benar, 24 salah
-      * Extrovert: 226 benar, 17 salah
+      * Introvert: 184
+      * Extrovert: 236
 
 3. Random Forest
   *   Akurasi: 88.0%
   *   Confusion Matrix:
-      * Introvert: 246 benar, 30 salah
-      * Extrovert: 219 benar, 24 salah
+      * Introvert: 184
+      * Extrovert: 236
 
 **Analisis Performa:**
 
@@ -509,7 +509,7 @@ Alasan Keunggulan AdaBoost
 *   Memberikan bobot lebih pada data yang salah diklasifikasi
 
 **Kesimpulan**
-AdaBoost menunjukkan performa paling baik dalam memprediksi tipe kepribadian, dengan akurasi 92.10% dan kemampuan generalisasi yang superior dibandingkan KNN dan Random Forest.
+AdaBoost menunjukkan performa paling baik dalam memprediksi tipe kepribadian, dengan akurasi 93.0% dan kemampuan generalisasi yang superior dibandingkan KNN dan Random Forest.
 
 ### Requirements
 """
