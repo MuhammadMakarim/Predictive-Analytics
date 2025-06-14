@@ -34,13 +34,13 @@ Untuk mencapai tujuan dalam studi kasus ini, dilakukan beberapa tahapan solusi s
 3. Melakukan evaluasi model untuk memilih model terbaik berdasarkan metrik evaluasi yang sesuai, seperti akurasi, precision, recall, dan F1 score. Ini bertujuan untuk menentukan model yang paling efektif dalam mengklasifikasikan kepribadian individu berdasarkan data yang tersedia.
 
 ## Data Understanding
-Dataset yang digunakan pada proyek ini diambil dari 
+Dataset personality yang digunakan pada proyek ini berjumlah 2838 baris dan 8 kolom yang diambil pada:
 <br/>
 https://www.kaggle.com/datasets/rakeshkapilavai/extrovert-vs-introvert-behavior-data
 <br/>
 ### EDA - Deskripsi Variabel
 ## Deskripsi Dataset
-Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi mengenai perilaku sosial mereka serta tipe kepribadian. Respon ini menyangkut faktor-faktor seperti ketakutan berbicara di depan umum, kehadiran di acara sosial, dan bagaimana perasaan mereka setelah interaksi tersebut. Dataset tersebut berjumlah 2838 data dengan karakteristik yang bervariasi, memungkinkan analisis yang mendalam tentang bagaimana perbedaan tipe kepribadian (introvert dan extrovert) memengaruhi tingkat keterlibatan sosial mereka. Berikut adalah penjelasan masing-masing kolom:
+Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi mengenai perilaku sosial mereka serta tipe kepribadian. Respon ini menyangkut faktor-faktor seperti ketakutan berbicara di depan umum, kehadiran di acara sosial, dan bagaimana perasaan mereka setelah interaksi tersebut. Dataset tersebut berjumlah 2838 data dan 8 kolom dengan karakteristik yang bervariasi, memungkinkan analisis yang mendalam tentang bagaimana perbedaan tipe kepribadian (introvert dan extrovert) memengaruhi tingkat keterlibatan sosial mereka. Berikut adalah penjelasan masing-masing kolom:
 - **Time_spent_Alone**: Waktu yang dihabiskan individu sendirian dalam sehari (dalam jam).
 - **Stage_fear**: Faktor yang menunjukkan ketakutan individu saat berbicara di depan umum (Ya/Tidak).
 - **Social_event_attendance**: Tingkat kehadiran individu di acara sosial (Ya/Tidak).
@@ -50,6 +50,18 @@ Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi men
 - **Post_frequency**: Frekuensi individu membagikan pengalaman sosial secara online (skala 0-10).
 - **Personality**: Tipe kepribadian individu, yang dibedakan menjadi "Introvert" dan "Extrovert".
 
+Pada dataset ini terdapat missing values pada fitur:
+   - Identifikasi missing values pada kolom-kolom:
+       - Time_spent_Alone: 63
+       - Stage_fear: 73
+       - Social_event_attendance: 62
+       - Going_outside: 66
+       - Drained_after_socializing: 52
+       - Friends_circle_size: 77
+       - Post_frequency: 65
+
+Selain missing values pada dataset juga terdapat 388 entri yang harus ditangani nantinya
+
 ### Variable - variable pada dataset
 - Data Float = Time_spent_Alone, Going_outside, Friends_circle_size, Post_frequency.  
 - Data Object = Stage_fear, Social_event_attendance, Drained_after_social, Personality.
@@ -58,14 +70,14 @@ Dataset ini terdiri dari respon-respon dari individu yang mencakup informasi men
 Analisis univariat dilakukan untuk memahami distribusi masing-masing variabel secara individual. Beberapa temuan awal:
 
 ##### Kolom Categorical 
-![Grafik Univariate Categorical Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Uni_Categorical%20Feature.png) 
+![Grafik Univariate Categorical Data](https://raw.githubusercontent.com/MuhammadMakarim/Predictive-Analytics/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Uni_Categorical%20Feature.png) 
 
 Pada kolom kategorikal, visualisasi berikut digunakan untuk menunjukkan frekuensi dari masing-masing kategori:
 - Terdapat dua kategori dalam fitur Stage_fear, di mana jumlah individu yang tidak mengalami ketakutan berbicara di depan umum (No) hampir seimbang dengan mereka yang mengalami ketakutan (Yes). Ini menunjukkan bahwa populasi dalam dataset ini memiliki proporsi yang hampir sama antara individu yang merasa nyaman untuk berbicara di depan umum dan yang tidak.
 - Terdapat dua kategori dalam fitur Personality, yang dibagi menjadi Extrovert dan Introvert, dengan hampir setengah dari populasi termasuk dalam masing-masing kategori. Ini menunjukkan adanya keseimbangan antara kepribadian extrovert dan introvert, yang bisa berpengaruh dalam interaksi sosial dan preferensi individu.
 
 ##### Kolom Numerik
-![Grafik Univariate Numeric Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Uni_Numerical%20Feature_Histogram.png)
+![Grafik Univariate Numeric Data](https://raw.githubusercontent.com/MuhammadMakarim/Predictive-Analytics/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Uni_Numerical%20Feature_Histogram.png)
 
 Pada kolom numerik, visualisasi berikut digunakan untuk menunjukkan frekuensi dari masing-masing kategori:
 - Distribusi waktu yang dihabiskan sendirian Time_spent_Alone menunjukkan variasi yang signifikan, dengan mayoritas individu menghabiskan antara 0 hingga 5 jam sendirian. Ini mungkin menunjukkan kecenderungan bahwa individu lebih suka sosial dibandingkan menghabiskan waktu sendiri, setidaknya dalam konteks ini.
@@ -77,7 +89,7 @@ Pada kolom numerik, visualisasi berikut digunakan untuk menunjukkan frekuensi da
 ### EDA - Multivariate Analysis
 
 ##### Kolom Categorical
-![Grafik Multivariate Categorical Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Multi_Korelasi%20Semua%20Variabel%20dengan%20Personality.png)
+![Grafik Multivariate Categorical Data](https://raw.githubusercontent.com/MuhammadMakarim/Predictive-Analytics/ccd7627641ae70edf33cfa07ddfcbf3f43eda995/Gambar/Multi_Korelasi%20Semua%20Variabel%20dengan%20Personality.png)
 
 - Introvert: Cenderung memiliki nilai tinggi pada Time_spent_Alone dan Stage_fear, serta rendah pada Social_event_attendance dan Going_outside. Mereka juga sering merasa drained setelah bersosialisasi. Dikenali dengan ukuran Friends_circle_size yang lebih kecil dan rendahnya frekuensi posting di media sosial.
 - Extrovert: Menunjukkan waktu yang lebih rendah untuk dihabiskan sendirian dan lebih aktif dalam Social_event_attendance dan Going_outside. Memiliki ukuran Friends_circle_size yang lebih besar dan lebih aktif dalam membagikan pengalaman mereka di media sosial.
@@ -85,7 +97,7 @@ Pada kolom numerik, visualisasi berikut digunakan untuk menunjukkan frekuensi da
 <br/>
 
 ##### Kolom Numerik
-![Grafik Multivariate Categorical Data](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Multi_Korelasi%20Variabel%20Numerik.png)
+![Grafik Multivariate Categorical Data](https://raw.githubusercontent.com/MuhammadMakarim/Predictive-Analytics/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Multi_Korelasi%20Variabel%20Numerik.png)
 
 - Time_spent_Alone: Mengukur waktu yang dihabiskan sendirian setiap hari dalam jam. Terdapat korelasi positif yang signifikan dengan Drained_after_socializing (nilai: 0.87), yang menunjukkan bahwa semakin banyak waktu dihabiskan sendirian, semakin besar kemungkinan individu merasa lelah setelah bersosialisasi.
 - Social_event_attendance: Mengukur seberapa sering individu menghadiri acara sosial. Korelasi negatif yang signifikan dengan Stage_fear (nilai: -0.85) mengindikasikan bahwa individu yang merasa takut berbicara di depan umum juga kurang memiliki frekuensi kehadiran di acara sosial, serta menunjukkan hubungan positif dengan Friends_circle_size (nilai: 0.73).
@@ -122,8 +134,6 @@ Bagian ini menjelaskan tahapan persiapan data yang telah dilakukan sebelum melak
        - Mapping manual untuk kolom Stage_fear dan Drained_after_socializing
    - Metode Encoding:
        - Menggunakan pd.get_dummies() untuk kolom:
-           - Stage_fear
-           - Drained_after_socializing
            - Post_frequency
            - Personality  
    Mengubah variabel kategorikal menjadi format numerik yang dapat diproses model
@@ -153,13 +163,13 @@ Setiap tahapan dirancang untuk mempersiapkan dataset secara optimal, memastikan 
 
 Dalam tahap evaluasi, kinerja setiap model yang diterapkan dalam proyek ini akan dianalisis secara komprehensif menggunakan beberapa metrik evaluasi yang relevan. Metrik yang digunakan adalah akurasi, precision, recall, dan F1 score, yang semuanya penting untuk memahami bagaimana baiknya model dalam mengklasifikasikan kepribadian individu sebagai introvert atau extrovert. (catatan: )
 
-![Grafik Akurasi Model](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Akurasi%20KNN.png)
+![Grafik Akurasi Model](https://raw.githubusercontent.com/MuhammadMakarim/Predictive-Analytics/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Akurasi%20KNN.png)
 - KNN adalah algoritma klasifikasi berbasis instance learning yang mengklasifikasikan data berdasarkan kedekatan jarak dengan tetangga terdekatnya. Dalam konteks klasifikasi kepribadian, model ini mencapai akurasi 91.4% dengan mekanisme penentuan kelas melalui mayoritas dari k-tetangga terdekat. Metode ini menunjukkan kemampuan yang solid dalam membedakan antara tipe kepribadian introvert dan extrovert, dengan kemampuan mengidentifikasi 184 individu introvert dan 236 individu extrovert secara akurat. Kelebihan utama KNN terletak pada kesederhanaan algoritmanya dan tidak memerlukan asumsi distribusi data, namun memiliki kelemahan dalam hal kompleksitas komputasi yang tinggi untuk dataset besar dan sensitifitas terhadap fitur yang tidak seimbang. Precision untuk kelas introvert mencapai 0.88, sementara recall sebesar 0.93, dan precision untuk kelas ekstrovert mencapai 0.94 serta recall sebesar 0.90. Menunjukkan keseimbangan yang baik antara ketepatan dan kelengkapan prediksi.
 
-![Grafik Akurasi Model](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Akurasi%20Random%20Forest.png)
+![Grafik Akurasi Model](https://raw.githubusercontent.com/MuhammadMakarim/Predictive-Analytics/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Akurasi%20Random%20Forest.png)
 - Random Forest adalah metode ensemble berbasis pohon keputusan yang menghasilkan multiple decision tree dan mayoritas untuk klasifikasi akhir. Dalam analisis kepribadian, model ini mencapai akurasi 88.0%, yang merupakan performa terendah di antara ketiga model yang diuji. Metode ini berhasil mengklasifikasikan 184 individu introvert dan 236 individu extrovert, dengan kemampuan menangani fitur non-linier dan toleran terhadap missing values. Kelebihan utama Random Forest adalah kemampuannya mencegah overfitting melalui agregasi multiple tree dan dapat mengestimasi pentingnya fitur dalam klasifikasi. Namun, kompleksitas modelnya yang tinggi membuat interpretasi hasil menjadi lebih sulit. Precision untuk kelas introvert adalah 0.87 dengan recall 0.85, dan precision untuk kelas ekstrovert mencapai 0.89 serta recall sebesar 0.90. Menunjukkan performa yang solid namun tidak sebaik AdaBoost dan KNN. Kelemahan utama model ini terletak pada komputasi yang intensif dan penurunan kinerja pada dataset dengan noise tinggi.
 
-![Grafik Akurasi Model](https://github.com/MuhammadMakarim/Predictive-Analytics/blob/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Akurasi%20AdaBoost.png)
+![Grafik Akurasi Model](https://raw.githubusercontent.com/MuhammadMakarim/Predictive-Analytics/43efc1bfa71c02f6dace16cffcdcb327cf9741c7/Gambar/Akurasi%20AdaBoost.png)
 - AdaBoost (Adaptive Boosting) merupakan algoritma ensemble learning canggih yang secara adaptif meningkatkan performa klasifikasi dengan fokus pada sampel-sampel yang salah diklasifikasi pada iterasi sebelumnya. AdaBoost menunjukkan performa superior dengan akurasi tertinggi 93.0% (0.930952380952381), secara signifikan unggul dibandingkan model lainnya. Model ini berhasil mengklasifikasikan 184 individu introvert dan 236 individu extrovert dengan presisi yang tinggi. Mekanisme kerjanya melibatkan kombinasi beberapa weak learner yang diboost untuk membentuk sebuah strong classifier, yang memungkinkannya menangkap pola kompleks dalam data kepribadian. Keunggulan AdaBoost terletak pada kemampuannya mengurangi bias dan variance, serta robust terhadap overfitting. Precision untuk kelas introvert mencapai 0.91 dengan recall 0.94, dan precision untuk kelas ekstrovert mencapai 0.95 serta recall sebesar 0.92. Menunjukkan akurasi prediksi yang sangat baik. Meskipun demikian, model ini memiliki kompleksitas komputasi yang tinggi dan sensitif terhadap data outlier.
 
 ### Penyelesaian permasalahan
